@@ -1,0 +1,97 @@
+---
+// Footer: dark green bg, Instagram icon, nav links, copyright, credit
+---
+
+<footer class="footer" id="contact">
+	<div class="footer-inner">
+		<a href="https://instagram.com/wagbachausl" target="_blank" rel="noopener noreferrer" class="footer-instagram" aria-label="Instagram">
+			<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+				<rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
+				<circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+				<circle cx="18" cy="6" r="1.5" fill="currentColor"/>
+			</svg>
+		</a>
+		<nav class="footer-nav">
+			<a href="#contact">Contact Us</a>
+			<a href="#reservation">Book A Table</a>
+			<a href="#terms">Terms & Conditions</a>
+		</nav>
+		<p class="footer-copy">© 2025 disho All Rights Reserved</p>
+		<p class="footer-credit">Created by IT DEV</p>
+	</div>
+</footer>
+
+<style>
+	.footer {
+		background: var(--color-footer-bg);
+		color: white;
+		padding: 3rem 1.5rem 2rem;
+		text-align: center;
+		/* Κάνει το footer full-width, έξω από το περιορισμένο page wrapper */
+		width: 100vw;
+		margin-left: calc(50% - 50vw);
+		margin-right: calc(50% - 50vw);
+	}
+
+	.footer-inner {
+		max-width: 600px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1.25rem;
+	}
+
+	.footer-instagram {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 48px;
+		height: 48px;
+		border: 2px solid white;
+		border-radius: 50%;
+		color: white;
+		transition: color 0.2s, background 0.2s;
+	}
+
+	.footer-instagram:hover {
+		background: white;
+		color: var(--color-footer-bg);
+	}
+
+	.footer-instagram svg {
+		width: 24px;
+		height: 24px;
+	}
+
+	.footer-nav {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+	}
+
+	.footer-nav a {
+		color: white;
+		text-decoration: none;
+		font-size: 0.95rem;
+		font-weight: 500;
+	}
+
+	.footer-nav a:hover {
+		text-decoration: underline;
+	}
+
+	.footer-copy,
+	.footer-credit {
+		font-size: 0.9rem;
+		opacity: 0.95;
+		margin: 0;
+	}
+
+	.footer-credit {
+		font-size: 0.85rem;
+		opacity: 0.85;
+	}
+</style>

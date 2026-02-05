@@ -1,0 +1,152 @@
+---
+// Speisekarte: title + 3 menu category cards with image + white frame + orange box
+const cards = [
+	{ title: "Schnitzel & Klassiker", href: "/menu#hauptgerichte", img: "/images/speisekarte-schnitzel.png", imgPos: "center center" },
+	{ title: "Fisch & Saisonales", href: "/menu#hauptgerichte", img: "/images/speisekarte-fisch.png", imgPos: "center center" },
+	{ title: "Getränke & Desserts", href: "/menu#getraenke-desserts", img: "/images/speisekarte-desserts.png", imgPos: "center center" },
+];
+---
+
+<section class="speisekarte" id="speisekarte">
+	<div class="speisekarte-inner">
+		<h2 class="speisekarte-title">Speisekarte</h2>
+		<div class="speisekarte-grid">
+			{cards.map((card) => (
+				<a href={card.href} class="speisekarte-card">
+					<div class="speisekarte-card-img" style={`background-image: url('${card.img}'); background-position: ${card.imgPos};`}></div>
+					<div class="speisekarte-card-frame" aria-hidden="true"></div>
+					<div class="speisekarte-card-overlay">
+						<div class="speisekarte-card-title-wrap">
+							{card.title.includes(" & ") ? (
+								<>
+									<span class="speisekarte-card-title">{card.title.split(" & ")[0]} &</span>
+									<span class="speisekarte-card-title">{card.title.split(" & ")[1]}</span>
+								</>
+							) : (
+								<span class="speisekarte-card-title">{card.title}</span>
+							)}
+						</div>
+						<span class="speisekarte-card-sub">Menu</span>
+					</div>
+				</a>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.speisekarte {
+		background: #f5f2ee;
+		padding: 4rem 1.5rem;
+	}
+
+	.speisekarte-inner {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.speisekarte-title {
+		font-family: var(--font-serif);
+		font-size: clamp(2rem, 3vw, 2.5rem);
+		font-weight: 700;
+		color: var(--color-green-dark);
+		text-align: center;
+		margin-bottom: 2.5rem;
+	}
+
+	.speisekarte-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.5rem;
+	}
+
+	.speisekarte-card {
+		display: block;
+		position: relative;
+		overflow: hidden;
+		aspect-ratio: 4 / 5;
+		text-decoration: none;
+		box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+		border-radius: 0;
+	}
+
+
+	.speisekarte-card-img {
+		position: absolute;
+		inset: 0;
+		background-size: cover;
+		background-repeat: no-repeat;
+		border-radius: 0;
+	}
+
+	.speisekarte-card-frame {
+		position: absolute;
+		top: 10%;
+		left: 10%;
+		right: 10%;
+		bottom: 10%;
+		border: 1px solid white;
+		border-radius: 8px;
+		pointer-events: none;
+		z-index: 1;
+	}
+
+	.speisekarte-card-overlay {
+		position: absolute;
+		top: 62%;
+		bottom: 8%;
+		left: 28%;
+		right: 28%;
+		background: #F07028;
+		color: white;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		padding: 0.75rem 1rem;
+		z-index: 2;
+		transition: top 0.55s ease, bottom 0.55s ease;
+	}
+
+	.speisekarte-card:hover .speisekarte-card-overlay {
+		top: 35%;
+		bottom: 35%;
+	}
+
+	.speisekarte-card-title-wrap {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.15rem;
+		text-align: center;
+	}
+
+	.speisekarte-card-overlay .speisekarte-card-title {
+		font-family: var(--font-sans);
+		font-size: 1.2rem;
+		font-weight: 500;
+		text-align: center;
+	}
+
+	.speisekarte-card-overlay .speisekarte-card-sub {
+		font-family: var(--font-serif);
+		font-size: 0.85rem;
+		font-style: italic;
+		opacity: 0.95;
+		text-align: center;
+		margin-top: 0.5rem;
+	}
+
+	@media (max-width: 768px) {
+		.speisekarte-grid {
+			grid-template-columns: 1fr;
+			max-width: 22rem;
+			margin: 0 auto;
+		}
+
+		.speisekarte-card {
+			aspect-ratio: 3 / 4;
+		}
+	}
+</style>

@@ -1,0 +1,373 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import FAQ from "../components/FAQ.astro";
+---
+
+<Layout
+	title="Kontakt | Naturfreundehaus Wagbachhäusel"
+	description="Kontaktieren Sie das Naturfreundehaus Wagbachhäusel – Telefon, E‑Mail, Adresse und Anfahrtsbeschreibung."
+>
+	<main class="contact-page">
+		<section class="contact-layout">
+			<div class="contact-copy">
+				<h1 class="contact-title">From First Bite To Last Sip</h1>
+				<p class="contact-intro">
+					Have a question, craving, or special request? We’re here to help.
+					Whether you’re booking a table, planning an event or just stopping by –
+					feel free to reach out.
+				</p>
+			</div>
+
+			<div class="contact-info-grid">
+				<div class="info-card">
+					<p class="info-label">Call:</p>
+					<p class="info-value">
+						<a href="tel:+4962053068850">49 6205 3068850</a>
+					</p>
+				</div>
+
+				<div class="info-card">
+					<p class="info-label">Email:</p>
+					<p class="info-value">
+						<a href="mailto:wagbachauslspotify@gmail.com">wagbachauslspotify@gmail.com</a>
+					</p>
+				</div>
+
+				<div class="info-card">
+					<p class="info-label">Address:</p>
+					<p class="info-value">
+						<a href="https://maps.app.goo.gl/JMLAt6GHHZi2c7j18" target="_blank" rel="noopener noreferrer">
+							Hausstückerweg 1<br />
+							68804 Altlußheim
+						</a>
+					</p>
+				</div>
+
+				<div class="info-card">
+					<p class="info-label">Opening Hours:</p>
+					<p class="info-value">
+						Mon - Wed: 11AM-8PM<br />
+						Thu- Sun: 11AM-10PM
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="contact-visual-block" id="contact-visual-block">
+			<div class="contact-image-inner">
+				<img src="/images/contact-pasta.png" alt="" loading="lazy" />
+			</div>
+			<div class="contact-form-panel" id="contact-form-panel">
+				<h2 class="contact-form-title">Get In Touch</h2>
+				<form class="contact-form" id="contact-form">
+					<div class="form-row form-row-two">
+						<div class="field">
+							<label for="contact-first">First Name <span class="required">*</span></label>
+							<input id="contact-first" name="first" type="text" placeholder="First Name" required />
+						</div>
+						<div class="field">
+							<label for="contact-last">Last Name <span class="required">*</span></label>
+							<input id="contact-last" name="last" type="text" placeholder="Last Name" required />
+						</div>
+					</div>
+					<div class="field">
+						<label for="contact-email">Email</label>
+						<input id="contact-email" name="email" type="email" placeholder="demo@mail.com" />
+					</div>
+					<div class="field">
+						<label for="contact-subject">Subject</label>
+						<input id="contact-subject" name="subject" type="text" placeholder="Sales" />
+					</div>
+					<div class="field">
+						<label for="contact-message">Message</label>
+						<textarea id="contact-message" name="message" rows="4" placeholder="Message"></textarea>
+					</div>
+					<p class="form-success" id="contact-form-success" aria-live="polite" hidden>Vielen Dank für Ihre Nachricht (Demo).</p>
+					<button type="submit" class="contact-form-btn">Book A Table</button>
+				</form>
+			</div>
+		</section>
+
+		<FAQ />
+
+		<Footer />
+	</main>
+</Layout>
+
+<style>
+	.contact-page {
+		padding: 4rem 0 0;
+	}
+
+	.contact-layout {
+		max-width: 1265px;
+		margin: 0 auto 4rem;
+		display: grid;
+		grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.3fr);
+		gap: 3rem;
+		align-items: start;
+	}
+
+	.contact-title {
+		font-family: var(--font-serif-didone);
+		/* Didone-style display, όπως στο reference */
+		font-size: clamp(3.1rem, 5.6vw, 4rem);
+		font-weight: 400;
+		color: #1f2819;
+		line-height: 1.08;
+		letter-spacing: 0.02em;
+		margin-bottom: 1rem;
+	}
+
+	.contact-intro {
+		color: #787373;
+		font-size: 1.2rem;
+		max-width: 34rem;
+	}
+
+	.contact-info-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1.75rem;
+	}
+
+	.info-card {
+		background: #f5f2ee;
+		border-radius: 0.5rem;
+		border: none;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+		padding: 2rem 2.25rem;
+		aspect-ratio: 1 / 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.info-label {
+		font-size: 0.95rem;
+		color: #8c8580;
+		margin-bottom: 0.5rem;
+		text-align: center;
+	}
+
+	.info-value {
+		font-family: var(--font-sans);
+		font-size: 1.2rem;
+		font-weight: 400;
+		color: #2C3E20;
+		line-height: 1.6;
+		text-align: center;
+		word-break: break-word;
+		overflow-wrap: anywhere;
+	}
+
+	.info-value a {
+		color: #2C3E20;
+		text-decoration: none;
+	}
+
+	.info-value a:hover {
+		text-decoration: underline;
+	}
+
+	/* Visual block: image + form overlay */
+	.contact-visual-block {
+		position: relative;
+		max-width: 1265px;
+		margin: 0 auto 0;
+		padding-bottom: 28rem;
+	}
+
+	.contact-image-inner {
+		box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+	}
+
+	.contact-image-inner img {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	/* Form panel: overlay centered on image */
+	.contact-form-panel {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 100%;
+		max-width: 1160px;
+		padding: 4.83rem 5.43rem;
+		background: #fdf8f4;
+		box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+		transform: translate(-50%, calc(-50% + 20px));
+		opacity: 0;
+		transition: transform 0.7s ease-out, opacity 0.7s ease-out;
+	}
+
+	.contact-form-panel.is-visible {
+		transform: translate(-50%, -50%);
+		opacity: 1;
+	}
+
+	.contact-form-title {
+		font-family: var(--font-serif-didone);
+		font-size: clamp(1.75rem, 2.5vw, 2rem);
+		font-weight: 400;
+		color: #1f2819;
+		text-align: center;
+		margin-bottom: 1.5rem;
+	}
+
+	.contact-form {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.form-row-two {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+	}
+
+	.contact-form .field {
+		display: flex;
+		flex-direction: column;
+		gap: 0.35rem;
+	}
+
+	.contact-form label {
+		font-family: var(--font-sans);
+		font-size: 0.95rem;
+		font-weight: 400;
+		color: #282828;
+	}
+
+	.contact-form .required {
+		color: #ef7a44;
+	}
+
+	.contact-form input,
+	.contact-form textarea {
+		font-family: var(--font-sans);
+		font-size: 1rem;
+		color: #1f2819;
+		background: #fff;
+		border: none;
+		border-radius: 0.4rem;
+		padding: 0.6rem 0.75rem;
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	.contact-form input::placeholder,
+	.contact-form textarea::placeholder {
+		color: #9a9590;
+	}
+
+	.contact-form input:focus,
+	.contact-form textarea:focus {
+		outline: none;
+	}
+
+	.contact-form textarea {
+		resize: vertical;
+		min-height: 100px;
+	}
+
+	.form-success {
+		font-size: 0.95rem;
+		color: var(--color-green-dark);
+		margin: 0;
+	}
+
+	.contact-form-btn {
+		width: 100%;
+		background: #1a241a;
+		color: #fff;
+		border: none;
+		padding: 0.75rem 1.75rem;
+		font-size: 0.98rem;
+		font-weight: 500;
+		font-family: var(--font-sans);
+		cursor: pointer;
+		border-radius: 0;
+		text-align: center;
+		transition: background 0.2s ease;
+		display: block;
+	}
+
+	.contact-form-btn:hover {
+		background: #252f25;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.contact-form-panel {
+			transition: none;
+		}
+	}
+
+	@media (max-width: 900px) {
+		.contact-layout {
+			grid-template-columns: 1fr;
+			gap: 2.5rem;
+		}
+
+		.contact-info-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.info-card {
+			aspect-ratio: auto;
+		}
+
+		.contact-visual-block {
+			padding-bottom: 2rem;
+		}
+
+		.contact-form-panel {
+			position: static;
+			transform: none;
+			opacity: 1;
+			max-width: 100%;
+			margin-top: -8rem;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.contact-form-panel.is-visible {
+			transform: none;
+		}
+
+		.form-row-two {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
+
+<script>
+	const visualBlock = document.getElementById("contact-visual-block");
+	const formPanel = document.getElementById("contact-form-panel");
+	if (visualBlock && formPanel) {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) formPanel.classList.add("is-visible");
+				});
+			},
+			{ threshold: 0.3 }
+		);
+		observer.observe(visualBlock);
+	}
+
+	const form = document.getElementById("contact-form") as HTMLFormElement | null;
+	const successEl = document.getElementById("contact-form-success");
+	if (form && successEl) {
+		form.addEventListener("submit", (e) => {
+			e.preventDefault();
+			successEl.hidden = false;
+			form.reset();
+		});
+	}
+</script>
+

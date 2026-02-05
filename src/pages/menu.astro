@@ -1,0 +1,324 @@
+---
+import Layout from "../layouts/Layout.astro";
+import menuData from "../data/speisekarte.json";
+---
+
+<Layout
+	title="Speisekarte | Naturfreundehaus Wagbachhäusel"
+	description="Unsere Speisekarte – Vorspeisen, Hauptgerichte, Getränke und Desserts."
+>
+	<main class="menu-page">
+		<div class="menu-inner">
+			<nav class="menu-category-nav" aria-label="Speisekarte Kategorien">
+				<ul class="menu-category-list">
+					{menuData.categories.map((category) => (
+						<li>
+							<a href={`#${category.id}`} class="menu-category-link">{category.title}</a>
+						</li>
+					))}
+				</ul>
+			</nav>
+
+			{menuData.categories.map((category) => (
+				<section class="menu-category" id={category.id} data-category-section>
+					<h2 class="menu-category-title">{category.title}</h2>
+					{category.subcategories ? (
+						<>
+							<nav class="menu-subcategory-nav" aria-label={`${category.title} Unterkategorien`} data-subcategory-nav>
+								<ul class="menu-subcategory-list">
+									{category.subcategories.map((sub) => (
+										<li>
+											<a href={`#${category.id}-${sub.id}`} class="menu-subcategory-link" data-subcategory-link>{sub.title}</a>
+										</li>
+									))}
+								</ul>
+							</nav>
+							<div class="menu-subcategory-panels" data-subcategory-nav>
+								{category.subcategories.map((sub, idx) => (
+									<div class="menu-subcategory-panel" id={`${category.id}-${sub.id}`} data-subcategory-panel data-initial-active={idx === 0}>
+										<ul class="menu-items">
+											{sub.items.map((item) => (
+												<li class="menu-row">
+													<div class="menu-item-left">
+														<span class="menu-item-name">{item.name}</span>
+														{item.description && <p class="menu-item-desc">{item.description}</p>}
+													</div>
+													<span class="menu-item-price">{item.price}</span>
+												</li>
+											))}
+										</ul>
+									</div>
+								))}
+							</div>
+						</>
+					) : (
+						<ul class="menu-items">
+							{category.items.map((item) => (
+								<li class="menu-row">
+									<div class="menu-item-left">
+										<span class="menu-item-name">{item.name}</span>
+										{item.description && <p class="menu-item-desc">{item.description}</p>}
+									</div>
+									<span class="menu-item-price">{item.price}</span>
+								</li>
+							))}
+						</ul>
+					)}
+				</section>
+			))}
+		</div>
+	</main>
+</Layout>
+
+<style>
+	.menu-page {
+		padding: 3rem 0 4rem;
+		min-height: 60vh;
+	}
+
+	.menu-inner {
+		max-width: 720px;
+		margin: 0 auto;
+	}
+
+	.menu-category-nav {
+		margin-bottom: 2.5rem;
+	}
+
+	.menu-category-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem 1.5rem;
+		justify-content: center;
+	}
+
+	.menu-category-list li {
+		margin: 0;
+	}
+
+	.menu-subcategory-nav {
+		margin-bottom: 1.25rem;
+	}
+
+	.menu-subcategory-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem 1.5rem;
+	}
+
+	.menu-subcategory-list li {
+		margin: 0;
+	}
+
+	.menu-category-link {
+		font-family: var(--font-serif);
+		font-size: 1.1rem;
+		font-weight: 500;
+		color: var(--color-green-dark);
+		text-decoration: none;
+		padding: 0.35rem 0;
+		display: inline-block;
+		border-bottom: 2px solid transparent;
+		transition: border-color 0.2s ease, color 0.2s ease;
+	}
+
+	.menu-category-link:hover {
+		border-bottom-color: var(--color-accent);
+		color: #2e3d2f;
+	}
+
+	.menu-category-link.active {
+		border-bottom-color: var(--color-accent);
+		font-weight: 600;
+		color: #2e3d2f;
+	}
+
+	.menu-category {
+		margin-bottom: 2.5rem;
+	}
+
+	.menu-category-title {
+		font-family: var(--font-serif);
+		font-size: 1.5rem;
+		font-weight: 600;
+		color: var(--color-green-dark);
+		margin-bottom: 1rem;
+		padding-bottom: 0.35rem;
+		padding-right: 0.5rem;
+		width: 100%;
+		box-sizing: border-box;
+		border-bottom: 1px solid var(--color-accent);
+	}
+
+	#schwein-vom-grill .menu-category-title {
+		display: none;
+	}
+
+	#schwein-vom-grill .menu-subcategory-nav {
+		display: flex;
+		justify-content: center;
+	}
+
+	#schwein-vom-grill .menu-subcategory-list {
+		justify-content: center;
+	}
+
+	.menu-subcategory-link {
+		font-family: var(--font-sans);
+		font-size: 1rem;
+		font-weight: 500;
+		color: var(--color-green-dark);
+		text-decoration: none;
+		padding: 0.35rem 0;
+		display: inline-block;
+		border-bottom: 2px solid transparent;
+		transition: border-color 0.2s ease, color 0.2s ease;
+	}
+
+	.menu-subcategory-link:hover {
+		border-bottom-color: var(--color-accent);
+		color: #2e3d2f;
+	}
+
+	.menu-subcategory-link.active {
+		border-bottom-color: var(--color-accent);
+		color: #2e3d2f;
+	}
+
+	.menu-subcategory-panels {
+		position: relative;
+	}
+
+	.menu-subcategory-panel {
+		display: none;
+	}
+
+	.menu-subcategory-panel.is-visible {
+		display: block;
+	}
+
+	.menu-items {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.menu-row {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 1rem;
+		padding: 0.6rem 0;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+		font-size: 1rem;
+	}
+
+	.menu-row:last-child {
+		border-bottom: none;
+	}
+
+	.menu-item-left {
+		min-width: 0;
+		flex: 1;
+	}
+
+	.menu-item-name {
+		color: var(--color-text);
+		font-weight: 500;
+	}
+
+	.menu-item-desc {
+		font-size: 0.9rem;
+		color: var(--color-text-muted);
+		margin: 0.25rem 0 0;
+		font-weight: 400;
+		line-height: 1.4;
+	}
+
+	.menu-item-price {
+		color: var(--color-text-muted);
+		font-weight: 600;
+		white-space: nowrap;
+	}
+</style>
+
+<script>
+	function initMenuCategories() {
+		const sections = document.querySelectorAll("[data-category-section]");
+		const links = document.querySelectorAll(".menu-category-link");
+		if (!sections.length || !links.length) return;
+
+		function showCategory(id) {
+			sections.forEach((el) => {
+				el.style.display = el.id === id ? "block" : "none";
+			});
+			links.forEach((a) => {
+				const href = a.getAttribute("href") || "";
+				const linkId = href.startsWith("#") ? href.slice(1) : "";
+				a.classList.toggle("active", linkId === id);
+			});
+		}
+
+		function syncSubcategoryNav() {
+			document.querySelectorAll(".menu-category").forEach((categorySection) => {
+				if (categorySection.style.display === "none") return;
+				const nav = categorySection.querySelector("[data-subcategory-nav]");
+				if (!nav) return;
+				const categoryId = categorySection.id;
+				const panels = categorySection.querySelectorAll("[data-subcategory-panel]");
+				const subLinks = categorySection.querySelectorAll("[data-subcategory-link]");
+				if (!panels.length) return;
+				const hash = window.location.hash.slice(1);
+				const prefix = categoryId + "-";
+				const activePanelId = hash.startsWith(prefix) && categorySection.querySelector("#" + CSS.escape(hash)) ? hash : null;
+				const firstPanelId = panels[0].id;
+				const showPanelId = activePanelId || firstPanelId;
+				panels.forEach((panel) => {
+					panel.classList.toggle("is-visible", panel.id === showPanelId);
+				});
+				subLinks.forEach((a) => {
+					const href = (a.getAttribute("href") || "").slice(1);
+					a.classList.toggle("active", href === showPanelId);
+				});
+			});
+		}
+
+		function updateFromHash() {
+			const hash = window.location.hash.slice(1);
+			const mainCategoryId = Array.from(sections).find((s) => hash === s.id || hash.startsWith(s.id + "-"))?.id;
+			const hasMain = mainCategoryId != null;
+			if (hasMain) {
+				showCategory(mainCategoryId);
+			} else {
+				showCategory(sections[0].id);
+				if (!hash) history.replaceState(null, "", "#" + sections[0].id);
+			}
+			syncSubcategoryNav();
+		}
+
+		window.addEventListener("hashchange", updateFromHash);
+		updateFromHash();
+
+		document.querySelectorAll("[data-subcategory-link]").forEach((a) => {
+			a.addEventListener("click", (e) => {
+				const href = a.getAttribute("href") || "";
+				if (href.startsWith("#")) {
+					e.preventDefault();
+					window.location.hash = href.slice(1);
+				}
+			});
+		});
+	}
+
+	if (document.readyState === "loading") {
+		document.addEventListener("DOMContentLoaded", initMenuCategories);
+	} else {
+		initMenuCategories();
+	}
+</script>

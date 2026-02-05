@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Speisekarte from "../components/Speisekarte.astro";
+import UnserHaus from "../components/UnserHaus.astro";
+import Feiern from "../components/Feiern.astro";
+import CtaSpeisekarte from "../components/CtaSpeisekarte.astro";
+import Testimonials from "../components/Testimonials.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Naturfreundehaus Wagbachhäusel | Disho" description="Gemütlicher Treffpunkt am Wagbach. Vollbewirtschaftet, regionale Küche, Biergarten, kinderfreundlich.">
+	<main>
+		<Hero />
+		<span id="reservation" tabindex="-1" style="display:block;height:0;overflow:hidden;position:relative;top:-2rem"></span>
+		<Speisekarte />
+		<UnserHaus />
+		<Feiern />
+		<CtaSpeisekarte />
+		<Testimonials />
+		<Footer />
+	</main>
+</Layout>
+
+<style>
+	main {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+</style>

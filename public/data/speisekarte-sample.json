@@ -1,0 +1,32 @@
+{
+  "categories": [
+    {
+      "id": "vorspeisen",
+      "title": "Vorspeisen",
+      "items": [
+        { "name": "Suppe des Tages", "price": "4,50 €" },
+        { "name": "Salat mit Brot", "price": "6,00 €" },
+        { "name": "Bruschetta", "price": "5,50 €" }
+      ]
+    },
+    {
+      "id": "hauptgerichte",
+      "title": "Hauptgerichte",
+      "items": [
+        { "name": "Schnitzel mit Pommes", "price": "14,50 €" },
+        { "name": "Fisch des Tages", "price": "15,00 €" },
+        { "name": "Spaghetti Bolognese", "price": "12,00 €" },
+        { "name": "Rumpsteak mit Beilagen", "price": "18,50 €" }
+      ]
+    },
+    {
+      "id": "getraenke-desserts",
+      "title": "Getränke & Desserts",
+      "items": [
+        { "name": "Kaffee", "price": "2,50 €" },
+        { "name": "Hausgemachter Kuchen", "price": "4,00 €" },
+        { "name": "Eisbecher", "price": "5,50 €" }
+      ]
+    }
+  ]
+}

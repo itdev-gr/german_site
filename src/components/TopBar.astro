@@ -1,0 +1,125 @@
+---
+// Top bar: phone, address, logo, opening hours
+---
+
+<header class="topbar">
+	<div class="topbar-inner">
+		<div class="topbar-left">
+			<a href="tel:+4962053068850" class="topbar-link">Anruf +49 6205 3068850</a>
+			<img src="/images/stars.svg" alt="" class="topbar-sep" width="12" height="13" aria-hidden="true" />
+			<a href="https://maps.app.goo.gl/JMLAt6GHHZi2c7j18" target="_blank" rel="noopener noreferrer" class="topbar-address topbar-link">Hausstückerweg 1, 68804 Altlußheim</a>
+		</div>
+		<div class="topbar-center">
+			<div class="logo">
+				<div class="logo-icon" aria-hidden="true">
+					<img src="/images/logo.svg" alt="" width="39" height="39" />
+				</div>
+				<span class="logo-text">Disho</span>
+			</div>
+		</div>
+		<div class="topbar-right">
+			<span class="topbar-hours">Do, 17:00–21:00 · Fr–Sa, 12:00–21:00 · So, 11:00–21:00 · Feiertage, 11:00–21:00</span>
+		</div>
+	</div>
+</header>
+
+<style>
+	.topbar {
+		background: #f5f2ee;
+		border-bottom: 1px solid rgba(0,0,0,0.06);
+		padding: 0.5rem 1rem;
+	}
+
+	.topbar-inner {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		flex-wrap: wrap;
+		font-size: 0.85rem;
+		color: var(--color-text-muted);
+	}
+
+	.topbar-left {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.topbar-link {
+		color: var(--color-text);
+		text-decoration: none;
+	}
+
+	.topbar-link:hover {
+		text-decoration: underline;
+	}
+
+	.topbar-sep {
+		display: inline-block;
+		width: 12px;
+		height: 13px;
+		vertical-align: middle;
+		flex-shrink: 0;
+	}
+
+	.topbar-address {
+		white-space: nowrap;
+	}
+
+	.topbar-center {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.logo {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.logo-icon {
+		width: 39px;
+		height: 39px;
+	}
+
+	.logo-icon img {
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+
+	.logo-text {
+		font-family: var(--font-serif);
+		font-size: 1.35rem;
+		font-weight: 600;
+		color: var(--color-text);
+	}
+
+	.topbar-right {
+		text-align: right;
+	}
+
+	.topbar-hours {
+		white-space: nowrap;
+	}
+
+	@media (max-width: 768px) {
+		.topbar-inner {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		.topbar-left, .topbar-right {
+			justify-content: center;
+		}
+
+		.topbar-hours {
+			white-space: normal;
+			font-size: 0.8rem;
+		}
+	}
+</style>

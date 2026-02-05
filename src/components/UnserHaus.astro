@@ -1,0 +1,197 @@
+---
+// Unser Haus: two columns (image left, text right) + features line
+---
+
+<section class="unser-haus">
+	<div class="unser-haus-grid">
+		<div class="unser-haus-img-wrap">
+			<img src="/images/unser-haus-interior.png" alt="Innenansicht Naturfreundehaus Wagbachhäusel" class="unser-haus-img" width="600" height="500" />
+		</div>
+		<div class="unser-haus-content">
+			<h2 class="unser-haus-title">Unser Haus</h2>
+			<div class="unser-haus-stars" aria-hidden="true">
+				<img src="/images/stars.svg" alt="" width="20" height="21" />
+				<img src="/images/stars.svg" alt="" width="20" height="21" />
+				<img src="/images/stars.svg" alt="" width="20" height="21" />
+			</div>
+			<p class="unser-haus-p">
+				Im Naturfreundehaus Wagbachhäusel treffen sich Menschen,<br />
+				Natur und gute Küche.
+			</p>
+			<p class="unser-haus-p">
+				Unser Haus liegt ruhig am Wagbach, südlich von Altlußheim,<br />
+				und wird mit viel Herz geführt.
+			</p>
+			<p class="unser-haus-p">
+				Hier genießen Gäste regionale Gerichte, hausgemachte<br />
+				Spezialitäten und die familiäre Atmosphäre eines echten<br />
+				Naturfreundehauses.
+			</p>
+			<p class="unser-haus-team">Team Wagbachhäusel</p>
+			<p class="unser-haus-tagline">Gastgeber mit Leidenschaft</p>
+		</div>
+	</div>
+	<div class="unser-haus-features" aria-hidden="true">
+		<div class="unser-haus-features-track">
+			<span>REGIONALE KÜCHE</span>
+			<img src="/images/stars.svg" alt="" class="unser-haus-features-star" width="16" height="17" />
+			<span>HAUSGEMACHTE SPEISEN</span>
+			<img src="/images/stars.svg" alt="" class="unser-haus-features-star" width="16" height="17" />
+			<span>FREUNDLICHE ATMOSPHÄRE</span>
+			<img src="/images/stars.svg" alt="" class="unser-haus-features-star" width="16" height="17" />
+			<span>NATURNAHES ERLEBNIS</span>
+			<img src="/images/stars.svg" alt="" class="unser-haus-features-star" width="16" height="17" />
+			<span>KAFFEE & KÜCHE</span>
+			<span>REGIONALE KÜCHE</span>
+			<img src="/images/stars.svg" alt="" class="unser-haus-features-star" width="16" height="17" />
+			<span>HAUSGEMACHTE SPEISEN</span>
+			<img src="/images/stars.svg" alt="" class="unser-haus-features-star" width="16" height="17" />
+			<span>FREUNDLICHE ATMOSPHÄRE</span>
+			<img src="/images/stars.svg" alt="" class="unser-haus-features-star" width="16" height="17" />
+			<span>NATURNAHES ERLEBNIS</span>
+			<img src="/images/stars.svg" alt="" class="unser-haus-features-star" width="16" height="17" />
+			<span>KAFFEE & KÜCHE</span>
+		</div>
+	</div>
+</section>
+
+<style>
+	.unser-haus {
+		background: #f5f2ee;
+		padding: 4rem 1.5rem 3rem;
+	}
+
+	.unser-haus-grid {
+		max-width: 1200px;
+		margin: 0 auto 3rem;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+		align-items: center;
+	}
+
+	.unser-haus-img-wrap {
+		border-radius: 0.5rem;
+		overflow: hidden;
+		box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+	}
+
+	.unser-haus-img {
+		width: 100%;
+		height: auto;
+		display: block;
+		object-fit: cover;
+		max-height: 28rem;
+	}
+
+	.unser-haus-content {
+		max-width: 32rem;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.unser-haus-title {
+		font-family: var(--font-serif);
+		font-size: clamp(2rem, 3vw, 2.75rem);
+		font-weight: 700;
+		color: #2e3d2f;
+		margin-bottom: 0.75rem;
+		margin-top: 0;
+	}
+
+	.unser-haus-stars {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.unser-haus-stars img {
+		display: block;
+	}
+
+	.unser-haus-p {
+		font-family: var(--font-sans);
+		color: #4f4f4f;
+		font-size: 1rem;
+		line-height: 1.75;
+		margin-bottom: 1.25rem;
+		text-align: center;
+	}
+
+	.unser-haus-team {
+		font-family: var(--font-serif);
+		font-size: 1.25rem;
+		font-weight: 400;
+		font-style: italic;
+		color: #5e7c60;
+		margin-top: 1.5rem;
+		margin-bottom: 0.35rem;
+		text-align: center;
+	}
+
+	.unser-haus-tagline {
+		font-family: var(--font-sans);
+		font-size: 0.95rem;
+		color: #4f4f4f;
+		text-align: center;
+		margin: 0;
+	}
+
+	.unser-haus-features {
+		overflow: hidden;
+		background: #f5f2ee;
+		padding: 1rem 0;
+	}
+
+	.unser-haus-features-track {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem 1rem;
+		font-family: var(--font-sans);
+		font-size: 0.9rem;
+		font-weight: 600;
+		color: #3F473E;
+		text-transform: uppercase;
+		letter-spacing: 0.02em;
+		white-space: nowrap;
+		animation: unser-haus-marquee 44s linear infinite;
+		width: max-content;
+	}
+
+	@keyframes unser-haus-marquee {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(-50%);
+		}
+	}
+
+	.unser-haus-features-star {
+		display: block;
+		flex-shrink: 0;
+	}
+
+	@media (max-width: 768px) {
+		.unser-haus-grid {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+
+		.unser-haus-img-wrap {
+			order: 1;
+		}
+
+		.unser-haus-content {
+			order: 2;
+		}
+
+		.unser-haus-features {
+			font-size: 0.8rem;
+			gap: 0.5rem;
+		}
+	}
+</style>

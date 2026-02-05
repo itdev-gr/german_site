@@ -1,0 +1,127 @@
+---
+// Was Sie Bei Uns Feiern Können: 3 cards with icon, subtitle, paragraph
+const cards = [
+	{
+		title: "Familienfeiern",
+		text: "Feiern Sie Ihre besonderen Momente in gemütlicher Atmosphäre - mit hausgemachtem Essen, freundlichem Service und Platz für Groß und Klein.",
+		icon: "cake",
+	},
+	{
+		title: "Vereine & Gruppen",
+		text: "Ob Wandergruppe, Radverein oder Stammtisch – das Naturfreundehaus bietet den idealen Treffpunkt für gesellige Stunden am Wagbach.",
+		icon: "dish",
+	},
+	{
+		title: "Feste & Veranstaltungen",
+		text: "Geburtstage, Jubiläen oder Betriebsfeste – wir richten Ihre Feier mit Liebe und regionaler Küche aus. Fragen Sie einfach an.",
+		icon: "birthday",
+	},
+];
+---
+
+<section class="feiern">
+	<div class="feiern-inner">
+		<h2 class="feiern-title">Was Sie Bei Uns Feiern Können</h2>
+		<div class="feiern-grid">
+			{cards.map((card) => (
+				<article class="feiern-card">
+					<div class="feiern-icon-wrap">
+						{card.icon === "cake" && (
+							<img src="/images/feiern-cake.svg" alt="" class="feiern-icon feiern-icon-img" width="28" height="28" aria-hidden="true" />
+						)}
+						{card.icon === "dish" && (
+							<img src="/images/feiern-dish.svg" alt="" class="feiern-icon feiern-icon-img" width="28" height="28" aria-hidden="true" />
+						)}
+						{card.icon === "birthday" && (
+							<img src="/images/feiern-birthday.svg" alt="" class="feiern-icon feiern-icon-img" width="28" height="28" aria-hidden="true" />
+						)}
+					</div>
+					<h3 class="feiern-card-title">{card.title}</h3>
+					<p class="feiern-card-text">{card.text}</p>
+				</article>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.feiern {
+		background: #f5f2ee;
+		padding: 4rem 1.5rem;
+	}
+
+	.feiern-inner {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.feiern-title {
+		font-family: var(--font-serif);
+		font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+		font-weight: 400;
+		color: #2e3d2f;
+		text-align: center;
+		margin-bottom: 2.5rem;
+	}
+
+	.feiern-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+	}
+
+	.feiern-card {
+		background: #f5f2ee;
+		border-radius: 0.5rem;
+		padding: 2rem 1.5rem;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+		text-align: left;
+	}
+
+	.feiern-icon-wrap {
+		width: 80px;
+		height: 80px;
+		margin: 0 0 1.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--color-surface);
+		border-radius: 50%;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+		color: #E87D07;
+	}
+
+	.feiern-icon {
+		width: 28px;
+		height: 28px;
+	}
+
+	.feiern-icon-img {
+		display: block;
+		object-fit: contain;
+	}
+
+	.feiern-card-title {
+		font-family: var(--font-serif);
+		font-size: 1.755rem;
+		font-weight: 400;
+		color: #1a1a1a;
+		margin-bottom: 1rem;
+		line-height: 1.35;
+	}
+
+	.feiern-card-text {
+		font-family: var(--font-sans);
+		font-size: 0.95rem;
+		color: #555555;
+		line-height: 1.6;
+	}
+
+	@media (max-width: 768px) {
+		.feiern-grid {
+			grid-template-columns: 1fr;
+			max-width: 24rem;
+			margin: 0 auto;
+		}
+	}
+</style>

@@ -1,0 +1,156 @@
+---
+// CTA: full-bleed tuna image with blur zone from middle to left (animated) and text on top
+---
+
+<section class="cta-speisekarte" id="anfrage">
+	<div class="cta-bg">
+		<img src="/images/cta-tuna-salad.png" alt="" class="cta-bg-img" width="1200" height="600" aria-hidden="true" />
+		<div class="cta-blur-zone" aria-hidden="true"></div>
+	</div>
+	<div class="cta-inner">
+		<div class="cta-box">
+			<h2 class="cta-title">Worauf Haben Sie Heute Lust?</h2>
+			<p class="cta-text">
+				Ob deftiges Schnitzel, frischer Fisch oder hausgemachter Kuchen – im Naturfreundehaus Wagbachhäusel findet jeder sein Lieblingsgericht.
+			</p>
+			<p class="cta-text">Regional, ehrlich und mit Liebe gekocht.</p>
+			<div class="cta-btn-wrap">
+				<a href="/menu" class="cta-btn">Zur Speisekarte</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.cta-speisekarte {
+		position: relative;
+		min-height: 36.4rem;
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+	}
+
+	.cta-bg {
+		position: absolute;
+		inset: 0;
+	}
+
+	.cta-bg-img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	.cta-blur-zone {
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		width: 50%;
+		background: rgba(0, 0, 0, 0.15);
+		backdrop-filter: blur(14px);
+		-webkit-backdrop-filter: blur(14px);
+		transform-origin: right center;
+		animation: cta-blur-in 1.2s ease-out forwards;
+	}
+
+	@keyframes cta-blur-in {
+		0% {
+			transform: scaleX(0);
+			opacity: 0;
+		}
+		100% {
+			transform: scaleX(1);
+			opacity: 1;
+		}
+	}
+
+	.cta-inner {
+		position: relative;
+		z-index: 1;
+		width: 50%;
+		margin: 0;
+		padding: 1.5rem;
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: stretch;
+		min-height: 36.4rem;
+		box-sizing: border-box;
+	}
+
+	.cta-box {
+		flex: 1;
+		max-width: 100%;
+		width: 100%;
+		min-height: 0;
+		box-sizing: border-box;
+		background: transparent;
+		border: 1px solid white;
+		border-radius: 0;
+		padding: 2.5rem;
+		text-align: left;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.cta-title {
+		font-family: var(--font-serif-didone);
+		font-size: clamp(2.52rem, 3.6vw, 3.24rem);
+		font-weight: 400;
+		color: white;
+		text-align: left;
+		margin-bottom: 1.25rem;
+		line-height: 1.35;
+		letter-spacing: 0.02em;
+	}
+
+	.cta-text {
+		font-family: var(--font-sans);
+		color: white;
+		font-size: 1rem;
+		line-height: 1.6;
+		margin-bottom: 1rem;
+	}
+
+	.cta-text:last-of-type {
+		margin-bottom: 1.5rem;
+	}
+
+	.cta-btn-wrap {
+		text-align: left;
+	}
+
+	.cta-btn {
+		display: inline-block;
+		background: #E76F40;
+		color: white;
+		padding: 0.65rem 1.5rem;
+		border-radius: 0.35rem;
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 1rem;
+		transition: background 0.2s, transform 0.15s;
+	}
+
+	.cta-btn:hover {
+		background: #d65a30;
+		transform: translateY(-2px);
+	}
+
+	@media (max-width: 768px) {
+		.cta-speisekarte {
+			min-height: 31.2rem;
+		}
+
+		.cta-inner {
+			min-height: 31.2rem;
+		}
+
+		.cta-box {
+			margin: 0 auto;
+		}
+	}
+</style>
