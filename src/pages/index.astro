@@ -16,6 +16,23 @@ import Footer from "../components/Footer.astro";
 		<Speisekarte />
 		<UnserHaus />
 		<Feiern />
+		<section class="salad-section" aria-label="Salat">
+			<div class="salad-section-wrap">
+				<img src="/images/feiern-salad.png" alt="Thunfischsalat – frischer Salat mit Thunfisch, Gemüse und Kräutern" class="salad-section-img" width="1200" height="800" loading="lazy" />
+				<div class="salad-blur-left">
+					<img src="/images/feiern-salad.png" alt="" class="salad-blur-img" width="1200" height="800" />
+					<div class="salad-blur-frame">
+						<div class="salad-blur-frame-content">
+							<h2 class="salad-blur-heading">Worauf Haben<br />Sie Heute Lust?</h2>
+							<p class="salad-blur-text">
+								Ob deftiges Schnitzel, frischer Fisch oder hausgemachter Kuchen — im Naturfreundehaus Wagbachhäusel findet jeder sein Lieblingsgericht.<br />Regional, ehrlich und mit Liebe gekocht.
+							</p>
+							<a href="/menu" class="salad-blur-btn">Zur Speisekarte</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 		<CtaSpeisekarte />
 		<Testimonials />
 		<Footer />
@@ -27,5 +44,108 @@ import Footer from "../components/Footer.astro";
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
+	}
+
+	.salad-section {
+		width: 100%;
+		max-width: 100%;
+		overflow: hidden;
+		background: var(--color-bg, #f5f2ee);
+	}
+
+	.salad-section-wrap {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.salad-section-img {
+		width: 100%;
+		height: auto;
+		display: block;
+		object-fit: cover;
+		object-position: center;
+		max-height: 70vh;
+	}
+
+	.salad-blur-left {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 50%;
+		height: 100%;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.salad-blur-img {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 200%;
+		height: 100%;
+		object-fit: cover;
+		object-position: left center;
+		filter: blur(6px);
+		display: block;
+		pointer-events: none;
+	}
+
+	.salad-blur-frame {
+		position: absolute;
+		inset: 6.12%;
+		border: 1.4px solid white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: clamp(1rem, 4%, 2rem);
+		box-sizing: border-box;
+	}
+
+	.salad-blur-frame-content {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1rem;
+		max-width: 90%;
+	}
+
+	.salad-blur-heading {
+		font-family: var(--font-serif);
+		font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+		font-weight: 400;
+		color: white;
+		line-height: 1.2;
+		margin: 0;
+		text-align: left;
+	}
+
+	.salad-blur-text {
+		font-family: var(--font-sans);
+		font-size: 1rem;
+		color: white;
+		line-height: 1.75;
+		margin: 0;
+		text-align: left;
+	}
+
+	.salad-blur-btn {
+		display: inline-block;
+		margin-top: 0.75rem;
+		padding: 0.6rem 1.25rem;
+		background: #e0824d;
+		color: white;
+		font-family: var(--font-sans);
+		font-size: 1rem;
+		font-weight: 600;
+		text-decoration: none;
+		border-radius: 0;
+		transition: background 0.2s ease, transform 0.15s ease;
+	}
+
+	.salad-blur-btn:hover {
+		background: #c96f3d;
+		transform: translateY(-1px);
 	}
 </style>

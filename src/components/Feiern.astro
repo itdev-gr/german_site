@@ -27,13 +27,13 @@ const cards = [
 				<article class="feiern-card">
 					<div class="feiern-icon-wrap">
 						{card.icon === "cake" && (
-							<img src="/images/feiern-cake.svg" alt="" class="feiern-icon feiern-icon-img" width="28" height="28" aria-hidden="true" />
+							<img src="/images/feiern-familie.svg" alt="" class="feiern-icon feiern-icon-img" width="28" height="28" aria-hidden="true" />
 						)}
 						{card.icon === "dish" && (
-							<img src="/images/feiern-dish.svg" alt="" class="feiern-icon feiern-icon-img" width="28" height="28" aria-hidden="true" />
+							<img src="/images/cake2.svg" alt="" class="feiern-icon feiern-icon-img" width="28" height="28" aria-hidden="true" />
 						)}
 						{card.icon === "birthday" && (
-							<img src="/images/feiern-birthday.svg" alt="" class="feiern-icon feiern-icon-img" width="28" height="28" aria-hidden="true" />
+							<img src="/images/cake.svg" alt="" class="feiern-icon feiern-icon-img" width="28" height="28" aria-hidden="true" />
 						)}
 					</div>
 					<h3 class="feiern-card-title">{card.title}</h3>
@@ -46,7 +46,7 @@ const cards = [
 
 <style>
 	.feiern {
-		background: #f5f2ee;
+		background: var(--color-bg);
 		padding: 4rem 1.5rem;
 	}
 
@@ -71,7 +71,7 @@ const cards = [
 	}
 
 	.feiern-card {
-		background: #f5f2ee;
+		background: var(--color-bg);
 		border-radius: 0.5rem;
 		padding: 2rem 1.5rem;
 		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
