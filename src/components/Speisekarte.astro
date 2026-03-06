@@ -9,7 +9,7 @@ const cards = [
 
 <section class="speisekarte" id="speisekarte">
 	<div class="speisekarte-inner">
-		<h2 class="speisekarte-title">Speisekarte</h2>
+		<h2 class="speisekarte-title" data-i18n="speisekarte.title">Speisekarte</h2>
 		<div class="speisekarte-grid">
 			{cards.map((card) => (
 				<a href={card.href} class="speisekarte-card">
@@ -26,7 +26,7 @@ const cards = [
 								<span class="speisekarte-card-title">{card.title}</span>
 							)}
 						</div>
-						<span class="speisekarte-card-sub">Menu</span>
+						<span class="speisekarte-card-sub" data-i18n="speisekarte.cardSub">Menu</span>
 					</div>
 				</a>
 			))}

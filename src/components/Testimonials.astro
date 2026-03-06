@@ -19,11 +19,11 @@ const collageImages = ["/images/hero-interior.png", "/images/feiern-salad.png", 
 
 <section class="testimonials">
 	<div class="testimonials-inner">
-		<h2 class="testimonials-heading">Was Gäste sagen</h2>
+		<h2 class="testimonials-heading" data-i18n="testimonials.heading">Was Gäste sagen</h2>
 		<div class="testimonials-grid">
-			{testimonials.map((t) => (
+			{testimonials.map((t, i) => (
 				<blockquote class="testimonial-card">
-					<p class="testimonial-text">"{t.text}"</p>
+					<p class="testimonial-text" data-i18n={`testimonials.t${i + 1}.text`}>"{t.text}"</p>
 					<cite class="testimonial-author">{t.author}</cite>
 				</blockquote>
 			))}
@@ -39,13 +39,9 @@ const collageImages = ["/images/hero-interior.png", "/images/feiern-salad.png", 
 				))}
 			</div>
 			<div class="instagram-content">
-				<h2 class="instagram-title">
-					Für schöne<br />
-					Momente am<br />
-					Wagbach
-				</h2>
+				<h2 class="instagram-title" data-i18n="testimonials.instagram.title">Für schöne Momente am Wagbach</h2>
 				<p class="instagram-handle">@wagbachausl</p>
-				<a href="https://instagram.com/wagbachausl" target="_blank" rel="noopener noreferrer" class="instagram-btn">Follow us on Instagram</a>
+				<a href="https://www.instagram.com/wagbachausl?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D" target="_blank" rel="noopener noreferrer" class="instagram-btn" data-i18n="testimonials.instagram.btn">Folgen Sie uns auf Instagram</a>
 			</div>
 		</div>
 	</div>

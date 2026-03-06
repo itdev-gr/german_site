@@ -1,97 +1,288 @@
 ---
-// Footer: dark green bg, Instagram icon, nav links, copyright, credit
+// Footer: logo, pages, menu categories, opening hours, contact, social
 ---
 
-<footer class="footer" id="contact">
+<footer class="footer">
 	<div class="footer-inner">
-		<a href="https://instagram.com/wagbachausl" target="_blank" rel="noopener noreferrer" class="footer-instagram" aria-label="Instagram">
-			<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-				<rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
-				<circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
-				<circle cx="18" cy="6" r="1.5" fill="currentColor"/>
-			</svg>
-		</a>
-		<nav class="footer-nav">
-			<a href="#contact">Contact Us</a>
-			<a href="#reservation">Book A Table</a>
-			<a href="#terms">Terms & Conditions</a>
-		</nav>
-		<p class="footer-copy">© 2025 disho All Rights Reserved</p>
-		<p class="footer-credit">Created by IT DEV</p>
+		<div class="footer-grid">
+			<!-- Logo & About -->
+			<div class="footer-col">
+				<div class="footer-logo">
+					<img src="/images/logo-wbh.svg" alt="Naturfreundehaus Wagbachhäusel" width="52" height="52" class="footer-logo-img" />
+					<span class="footer-logo-text">Naturfreundehaus<br/>Wagbachhäusel</span>
+				</div>
+				<p class="footer-about" data-i18n="footer.about">Griechische Spezialitäten in gemütlicher Atmosphäre am Wagbach.</p>
+				<div class="footer-social">
+					<a href="https://www.instagram.com/wagbachausl?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram">
+						<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+							<rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
+							<circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+							<circle cx="18" cy="6" r="1.5" fill="currentColor"/>
+						</svg>
+					</a>
+				</div>
+			</div>
+
+			<!-- Seiten & Speisekarte -->
+			<div class="footer-col">
+				<h3 class="footer-heading" data-i18n="footer.pages">Seiten</h3>
+				<ul class="footer-list">
+					<li><a href="/" data-i18n="nav.home">Home</a></li>
+					<li><a href="/menu" data-i18n="nav.menu">Speisekarte</a></li>
+					<li><a href="/contact" data-i18n="nav.contact">Kontakt</a></li>
+				</ul>
+				<h3 class="footer-heading footer-heading-second" data-i18n="footer.speisekarte">Speisekarte</h3>
+				<ul class="footer-list">
+					<li><a href="/menu#vorspeisen-salat" data-i18n="footer.vorspeisen">Vorspeisen & Salate</a></li>
+					<li><a href="/menu#beilagen-extras" data-i18n="footer.beilagen">Beilagen / Extras</a></li>
+					<li><a href="/menu#schwein-vom-grill" data-i18n="footer.grill">Grill</a></li>
+					<li><a href="/menu#getraenke-desserts" data-i18n="footer.desserts">Getränke & Desserts</a></li>
+				</ul>
+			</div>
+
+			<!-- Öffnungszeiten -->
+			<div class="footer-col">
+				<h3 class="footer-heading" data-i18n="footer.hours.title">Öffnungszeiten</h3>
+				<table class="footer-hours">
+					<tbody>
+						<tr><td data-i18n="footer.mon">Montag</td><td class="closed" data-i18n="footer.closed">Ruhetag</td></tr>
+						<tr><td data-i18n="footer.tue">Dienstag</td><td class="closed" data-i18n="footer.closed">Ruhetag</td></tr>
+						<tr><td data-i18n="footer.wed">Mittwoch</td><td>17:00 – 22:00</td></tr>
+						<tr><td data-i18n="footer.thu">Donnerstag</td><td>17:00 – 22:00</td></tr>
+						<tr><td data-i18n="footer.fri">Freitag</td><td>17:00 – 22:00</td></tr>
+						<tr><td data-i18n="footer.sat">Samstag</td><td>17:00 – 22:00</td></tr>
+						<tr><td data-i18n="footer.sun">Sonntag</td><td>11:30 – 15:00<br/>17:00 – 22:00</td></tr>
+					</tbody>
+				</table>
+			</div>
+
+			<!-- Kontakt -->
+			<div class="footer-col">
+				<h3 class="footer-heading" data-i18n="footer.contact">Kontakt</h3>
+				<ul class="footer-list footer-contact-list">
+					<li>
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+						<a href="tel:+4962053068850">+49 6205 3068850</a>
+					</li>
+					<li>
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+						<a href="https://maps.app.goo.gl/JMLAt6GHHZi2c7j18" target="_blank" rel="noopener noreferrer">Hausstückerweg 1<br/>68804 Altlußheim</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="footer-bottom">
+			<p class="footer-copy">&copy; 2025 <span data-i18n="footer.copy">Naturfreundehaus Wagbachhäusel. Alle Rechte vorbehalten.</span></p>
+			<p class="footer-credit">Created by IT DEV</p>
+		</div>
 	</div>
 </footer>
 
 <style>
 	.footer {
 		background: var(--color-footer-bg);
-		color: white;
-		padding: 3rem 1.5rem 2rem;
-		text-align: center;
-		/* Κάνει το footer full-width, έξω από το περιορισμένο page wrapper */
+		color: rgba(255, 255, 255, 0.85);
+		padding: 3.5rem 1.5rem 2rem;
 		width: 100vw;
 		margin-left: calc(50% - 50vw);
 		margin-right: calc(50% - 50vw);
 	}
 
 	.footer-inner {
-		max-width: 600px;
+		max-width: 1100px;
 		margin: 0 auto;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 1.25rem;
 	}
 
-	.footer-instagram {
+	.footer-grid {
+		display: grid;
+		grid-template-columns: 1.3fr 1fr 1fr 1fr;
+		gap: 2.5rem;
+	}
+
+	/* Logo & About */
+	.footer-logo {
+		display: flex;
+		align-items: center;
+		gap: 0.65rem;
+		margin-bottom: 1rem;
+	}
+
+	.footer-logo-img {
+		width: 52px;
+		height: 52px;
+		filter: invert(1);
+		flex-shrink: 0;
+	}
+
+	.footer-logo-text {
+		font-family: var(--font-serif);
+		font-size: 1.1rem;
+		font-weight: 600;
+		color: white;
+		line-height: 1.3;
+	}
+
+	.footer-about {
+		font-size: 0.9rem;
+		line-height: 1.6;
+		margin: 0 0 1.25rem;
+		color: rgba(255, 255, 255, 0.7);
+	}
+
+	/* Social */
+	.footer-social {
+		display: flex;
+		gap: 0.75rem;
+	}
+
+	.footer-social-link {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 48px;
-		height: 48px;
-		border: 2px solid white;
+		width: 40px;
+		height: 40px;
+		border: 1.5px solid rgba(255, 255, 255, 0.4);
 		border-radius: 50%;
-		color: white;
-		transition: color 0.2s, background 0.2s;
+		color: rgba(255, 255, 255, 0.8);
+		transition: color 0.2s, background 0.2s, border-color 0.2s;
 	}
 
-	.footer-instagram:hover {
+	.footer-social-link:hover {
 		background: white;
+		border-color: white;
 		color: var(--color-footer-bg);
 	}
 
-	.footer-instagram svg {
-		width: 24px;
-		height: 24px;
+	.footer-social-link svg {
+		width: 20px;
+		height: 20px;
 	}
 
-	.footer-nav {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: center;
-		gap: 1.5rem;
-	}
-
-	.footer-nav a {
+	/* Headings */
+	.footer-heading {
+		font-family: var(--font-serif);
+		font-size: 1.05rem;
+		font-weight: 600;
 		color: white;
-		text-decoration: none;
-		font-size: 0.95rem;
-		font-weight: 500;
+		margin: 0 0 0.85rem;
 	}
 
-	.footer-nav a:hover {
-		text-decoration: underline;
+	.footer-heading-second {
+		margin-top: 1.5rem;
+	}
+
+	/* Lists */
+	.footer-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.footer-list li {
+		margin-bottom: 0.45rem;
+	}
+
+	.footer-list a {
+		color: rgba(255, 255, 255, 0.7);
+		text-decoration: none;
+		font-size: 0.9rem;
+		transition: color 0.2s;
+	}
+
+	.footer-list a:hover {
+		color: white;
+	}
+
+	/* Contact list with icons */
+	.footer-contact-list li {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.5rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.footer-contact-list svg {
+		width: 18px;
+		height: 18px;
+		flex-shrink: 0;
+		margin-top: 2px;
+		color: var(--color-accent);
+	}
+
+	.footer-contact-list a {
+		line-height: 1.5;
+	}
+
+	/* Hours table */
+	.footer-hours {
+		width: 100%;
+		border-collapse: collapse;
+		font-size: 0.9rem;
+	}
+
+	.footer-hours td {
+		padding: 0.3rem 0;
+		vertical-align: top;
+	}
+
+	.footer-hours td:first-child {
+		color: rgba(255, 255, 255, 0.7);
+		padding-right: 1rem;
+		white-space: nowrap;
+	}
+
+	.footer-hours td:last-child {
+		color: rgba(255, 255, 255, 0.9);
+		text-align: right;
+		white-space: nowrap;
+	}
+
+	.footer-hours .closed {
+		color: rgba(255, 255, 255, 0.4);
+	}
+
+	/* Bottom bar */
+	.footer-bottom {
+		margin-top: 2.5rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.12);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 0.5rem;
 	}
 
 	.footer-copy,
 	.footer-credit {
-		font-size: 0.9rem;
-		opacity: 0.95;
+		font-size: 0.82rem;
+		color: rgba(255, 255, 255, 0.45);
 		margin: 0;
 	}
 
-	.footer-credit {
-		font-size: 0.85rem;
-		opacity: 0.85;
+	/* Mobile */
+	@media (max-width: 900px) {
+		.footer-grid {
+			grid-template-columns: 1fr 1fr;
+			gap: 2rem;
+		}
+	}
+
+	@media (max-width: 540px) {
+		.footer {
+			padding: 2.5rem 1.25rem 1.5rem;
+		}
+
+		.footer-grid {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+
+		.footer-bottom {
+			flex-direction: column;
+			text-align: center;
+			gap: 0.25rem;
+		}
 	}
 </style>

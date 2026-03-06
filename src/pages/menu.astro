@@ -13,7 +13,7 @@ import menuData from "../data/speisekarte.json";
 				<ul class="menu-category-list">
 					{menuData.categories.map((category) => (
 						<li>
-							<a href={`#${category.id}`} class="menu-category-link">{category.title}</a>
+							<a href={`#${category.id}`} class="menu-category-link" data-menu-text data-de={category.title} data-en={category.title_en || category.title} data-el={category.title_el || category.title}>{category.title}</a>
 						</li>
 					))}
 				</ul>
@@ -21,14 +21,14 @@ import menuData from "../data/speisekarte.json";
 
 			{menuData.categories.map((category) => (
 				<section class="menu-category" id={category.id} data-category-section>
-					<h2 class="menu-category-title">{category.title}</h2>
+					<h2 class="menu-category-title" data-menu-text data-de={category.title} data-en={category.title_en || category.title} data-el={category.title_el || category.title}>{category.title}</h2>
 					{category.subcategories ? (
 						<>
 							<nav class="menu-subcategory-nav" aria-label={`${category.title} Unterkategorien`} data-subcategory-nav>
 								<ul class="menu-subcategory-list">
 									{category.subcategories.map((sub) => (
 										<li>
-											<a href={`#${category.id}-${sub.id}`} class="menu-subcategory-link" data-subcategory-link>{sub.title}</a>
+											<a href={`#${category.id}-${sub.id}`} class="menu-subcategory-link" data-subcategory-link data-menu-text data-de={sub.title} data-en={sub.title_en || sub.title} data-el={sub.title_el || sub.title}>{sub.title}</a>
 										</li>
 									))}
 								</ul>
@@ -40,8 +40,8 @@ import menuData from "../data/speisekarte.json";
 											{sub.items.map((item) => (
 												<li class="menu-row">
 													<div class="menu-item-left">
-														<span class="menu-item-name">{item.name}</span>
-														{item.description && <p class="menu-item-desc">{item.description}</p>}
+														<span class="menu-item-name" data-menu-text data-de={item.name} data-en={item.name_en || item.name} data-el={item.name_el || item.name}>{item.name}</span>
+														{item.description && <p class="menu-item-desc" data-menu-text data-de={item.description} data-en={item.description_en || item.description} data-el={item.description_el || item.description}>{item.description}</p>}
 													</div>
 													<span class="menu-item-price">{item.price}</span>
 												</li>
@@ -56,8 +56,8 @@ import menuData from "../data/speisekarte.json";
 							{category.items.map((item) => (
 								<li class="menu-row">
 									<div class="menu-item-left">
-										<span class="menu-item-name">{item.name}</span>
-										{item.description && <p class="menu-item-desc">{item.description}</p>}
+										<span class="menu-item-name" data-menu-text data-de={item.name} data-en={item.name_en || item.name} data-el={item.name_el || item.name}>{item.name}</span>
+										{item.description && <p class="menu-item-desc" data-menu-text data-de={item.description} data-en={item.description_en || item.description} data-el={item.description_el || item.description}>{item.description}</p>}
 									</div>
 									<span class="menu-item-price">{item.price}</span>
 								</li>
@@ -156,16 +156,22 @@ import menuData from "../data/speisekarte.json";
 		border-bottom: 1px solid var(--color-accent);
 	}
 
-	#schwein-vom-grill .menu-category-title {
+	#schwein-vom-grill .menu-category-title,
+	#vorspeisen-salat .menu-category-title,
+	#getraenke .menu-category-title {
 		display: none;
 	}
 
-	#schwein-vom-grill .menu-subcategory-nav {
+	#schwein-vom-grill .menu-subcategory-nav,
+	#vorspeisen-salat .menu-subcategory-nav,
+	#getraenke .menu-subcategory-nav {
 		display: flex;
 		justify-content: center;
 	}
 
-	#schwein-vom-grill .menu-subcategory-list {
+	#schwein-vom-grill .menu-subcategory-list,
+	#vorspeisen-salat .menu-subcategory-list,
+	#getraenke .menu-subcategory-list {
 		justify-content: center;
 	}
 
@@ -249,6 +255,9 @@ import menuData from "../data/speisekarte.json";
 </style>
 
 <script>
+	// Start at top when entering the menu page
+	window.scrollTo(0, 0);
+
 	function initMenuCategories() {
 		const sections = document.querySelectorAll("[data-category-section]");
 		const links = document.querySelectorAll(".menu-category-link");
@@ -316,9 +325,31 @@ import menuData from "../data/speisekarte.json";
 		});
 	}
 
+	// Menu content language switching
+	function applyMenuLang(lang) {
+		document.querySelectorAll("[data-menu-text]").forEach((el) => {
+			const text = el.getAttribute("data-" + lang);
+			if (text) el.textContent = text;
+		});
+	}
+
+	function initMenuLang() {
+		const lang = localStorage.getItem("wbh-lang") || "de";
+		if (lang !== "de") applyMenuLang(lang);
+
+		// Listen for language changes from nav toggle
+		document.addEventListener("langchange", (e) => {
+			applyMenuLang(e.detail?.lang || "de");
+		});
+	}
+
 	if (document.readyState === "loading") {
-		document.addEventListener("DOMContentLoaded", initMenuCategories);
+		document.addEventListener("DOMContentLoaded", () => {
+			initMenuCategories();
+			initMenuLang();
+		});
 	} else {
 		initMenuCategories();
+		initMenuLang();
 	}
 </script>

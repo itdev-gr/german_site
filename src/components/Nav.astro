@@ -1,15 +1,22 @@
 ---
-// Navigation: Home, Menu, Contact + Anfrage button
+// Navigation: Home, Menu, Contact + Anfrage button + Language toggle
 ---
 
 <nav class="nav">
 	<div class="nav-inner">
 		<ul class="nav-links">
-			<li><a href="/" class="nav-link">Home</a></li>
-			<li><a href="/menu" class="nav-link">Menu</a></li>
-			<li><a href="/contact" class="nav-link">Contact</a></li>
+			<li><a href="/" class="nav-link" data-i18n="nav.home">Home</a></li>
+			<li><a href="/menu" class="nav-link" data-i18n="nav.menu">Speisekarte</a></li>
+			<li><a href="/contact" class="nav-link" data-i18n="nav.contact">Kontakt</a></li>
 		</ul>
-		<a href="/#anfrage" class="btn-anfrage">Anfrage</a>
+		<div class="nav-right">
+			<div class="lang-toggle" aria-label="Language">
+				<button type="button" class="lang-btn" data-lang-btn="de">DE</button>
+				<button type="button" class="lang-btn" data-lang-btn="en">EN</button>
+				<button type="button" class="lang-btn" data-lang-btn="el">ΕΛ</button>
+			</div>
+			<a href="/contact" class="btn-anfrage" data-i18n="nav.anfrage">Kontakt</a>
+		</div>
 	</div>
 </nav>
 
@@ -49,6 +56,46 @@
 		color: var(--color-accent);
 	}
 
+	.nav-right {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.lang-toggle {
+		display: flex;
+		gap: 0;
+		border: 1px solid rgba(0, 0, 0, 0.12);
+		border-radius: 4px;
+		overflow: hidden;
+	}
+
+	.lang-btn {
+		background: transparent;
+		border: none;
+		padding: 0.35rem 0.55rem;
+		font-size: 0.78rem;
+		font-weight: 600;
+		font-family: var(--font-sans);
+		color: var(--color-text-muted);
+		cursor: pointer;
+		transition: background 0.2s, color 0.2s;
+		letter-spacing: 0.02em;
+	}
+
+	.lang-btn:not(:last-child) {
+		border-right: 1px solid rgba(0, 0, 0, 0.08);
+	}
+
+	.lang-btn:hover {
+		background: rgba(0, 0, 0, 0.04);
+	}
+
+	.lang-btn.active {
+		background: var(--color-accent);
+		color: white;
+	}
+
 	.btn-anfrage {
 		background: var(--color-accent);
 		color: white;
@@ -72,6 +119,16 @@
 
 		.nav-link {
 			font-size: 0.9rem;
+		}
+
+		.lang-btn {
+			padding: 0.3rem 0.4rem;
+			font-size: 0.72rem;
+		}
+
+		.btn-anfrage {
+			padding: 0.4rem 0.9rem;
+			font-size: 0.85rem;
 		}
 	}
 </style>

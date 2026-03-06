@@ -21,9 +21,9 @@ const cards = [
 
 <section class="feiern">
 	<div class="feiern-inner">
-		<h2 class="feiern-title">Was Sie Bei Uns Feiern Können</h2>
+		<h2 class="feiern-title" data-i18n="feiern.title">Was Sie Bei Uns Feiern Können</h2>
 		<div class="feiern-grid">
-			{cards.map((card) => (
+			{cards.map((card, i) => (
 				<article class="feiern-card">
 					<div class="feiern-icon-wrap">
 						{card.icon === "cake" && (
@@ -36,8 +36,8 @@ const cards = [
 							<img src="/images/cake.svg" alt="" class="feiern-icon feiern-icon-img" width="28" height="28" aria-hidden="true" />
 						)}
 					</div>
-					<h3 class="feiern-card-title">{card.title}</h3>
-					<p class="feiern-card-text">{card.text}</p>
+					<h3 class="feiern-card-title" data-i18n={`feiern.card${i + 1}.title`}>{card.title}</h3>
+					<p class="feiern-card-text" data-i18n={`feiern.card${i + 1}.text`}>{card.text}</p>
 				</article>
 			))}
 		</div>

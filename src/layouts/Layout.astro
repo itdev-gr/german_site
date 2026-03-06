@@ -11,7 +11,7 @@ const { title = "Naturfreundehaus Wagbachhäusel | Disho", description = "Gemüt
 ---
 
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" id="html-root">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -30,6 +30,14 @@ const { title = "Naturfreundehaus Wagbachhäusel | Disho", description = "Gemüt
 			<Nav />
 			<slot />
 		</div>
+		<script>
+			import { initI18n } from "../scripts/i18n.js";
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", initI18n);
+			} else {
+				initI18n();
+			}
+		</script>
 	</body>
 </html>
 
